@@ -15,7 +15,7 @@ export default defineConfig({
   assetsInclude: ['**/*.html'],
   server: {
     host: '0.0.0.0', // Permite acesso externo (necessário para Docker)
-    port: 5173,
+    port: 8080,
     watch: {
       usePolling: true, // Necessário para funcionar com Docker no Windows/Mac
     },
