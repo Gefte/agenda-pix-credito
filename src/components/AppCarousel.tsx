@@ -68,12 +68,12 @@ const AppCarousel = () => {
       design: 'design/feed-busca-servico-usuario.html'
     },
     {
-      id: 'perfil',
+      id: 'perfil-credito',
       title: 'Meu Crédito',
       design: 'design/perfil-usuario-credito-disponivel.html'
     },
     {
-      id: 'perfil',
+      id: 'perfil-bloqueado',
       title: 'Crédito Bloqueado',
       design: 'design/perfil-usuario-credito-bloqueado.html'
     },
