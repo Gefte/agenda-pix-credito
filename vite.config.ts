@@ -11,8 +11,6 @@ export default defineConfig({
     },
   },
   publicDir: 'public',
-  // Configuração para servir os arquivos HTML da pasta design
-  assetsInclude: ['**/*.html'],
   server: {
     host: '0.0.0.0', // Permite acesso externo (necessário para Docker)
     port: 8080,
