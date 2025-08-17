@@ -4,6 +4,7 @@ import UserSection from "@/components/UserSection";
 import DifferentialsSection from "@/components/DifferentialsSection";
 import LeadRegistrationForm from "@/components/LeadRegistrationForm";
 import InteractiveSection from "@/components/InteractiveSection";
+import AppCarousel from "@/components/AppCarousel";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,10 @@ const Index = () => {
       <DifferentialsSection />
       <LeadRegistrationForm />
       <InteractiveSection />
+      
+      {/* App Carousel Section */}
+      <AppCarousel />
+      
       <Footer />
     </div>
   );

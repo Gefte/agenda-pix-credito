@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .material-icons {
+            font-size: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[#f9fbf9] justify-between group/design-root overflow-x-hidden max-w-sm mx-auto shadow-lg"
+      style='font-family: Manrope, "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="flex items-center bg-[#f9fbf9] p-4 pb-2 justify-between">
+          <h2 class="text-[#121a0f] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">Serviços</h2>
+          <div class="flex w-12 items-center justify-end">
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#121a0f] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0"
+            >
+              <div class="text-[#121a0f]" data-icon="Sliders" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M64,105V40a8,8,0,0,0-16,0v65a32,32,0,0,0,0,62v49a8,8,0,0,0,16,0V167a32,32,0,0,0,0-62Zm-8,47a16,16,0,1,1,16-16A16,16,0,0,1,56,152Zm80-95V40a8,8,0,0,0-16,0V57a32,32,0,0,0,0,62v97a8,8,0,0,0,16,0V119a32,32,0,0,0,0-62Zm-8,47a16,16,0,1,1,16-16A16,16,0,0,1,128,104Zm104,64a32.06,32.06,0,0,0-24-31V40a8,8,0,0,0-16,0v97a32,32,0,0,0,0,62v17a8,8,0,0,0,16,0V199A32.06,32.06,0,0,0,232,168Zm-32,16a16,16,0,1,1,16-16A16,16,0,0,1,200,184Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="px-4 py-3">
+          <label class="flex flex-col min-w-40 h-12 w-full">
+            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+              <div
+                class="text-[#639155] flex border-none bg-[#ebf2e9] items-center justify-center pl-4 rounded-l-lg border-r-0"
+                data-icon="MagnifyingGlass"
+                data-size="24px"
+                data-weight="regular"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                </svg>
+              </div>
+              <input
+                placeholder="Buscar serviços"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#121a0f] focus:outline-0 focus:ring-0 border-none bg-[#ebf2e9] focus:border-none h-full placeholder:text-[#639155] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                value=""
+              />
+            </div>
+          </label>
+        </div>
+        <h3 class="text-[#121a0f] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Recomendados</h3>
+        <div class="p-4 @container">
+          <div class="flex flex-col items-stretch justify-start rounded-lg @xl:flex-row @xl:items-start">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCimNp9DuU46u_r0NytFVovBr8nH-58G1wgYb5sg3VcSZBetk_fYrCs7cpvbemdc7NXQvQCgu3eYBLsC27RuQq1otLBD2zblY0UgohsxtvRgZW4V9fKr876PigIBUJxmdvtCw8IniXCAL-x5xFUkremiyGtC7w0kS6LUd7ERngbn0NJwM1m_WMztUQ_uMTS2yT_8BailnSGEQksVZA47lWnLkaMbXKAS2Q2yEr2c6Z-SoHIAjuDCAT8ArcWNFRoSllrI0-X1WSdCA");'
+            ></div>
+            <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
+              <p class="text-[#121a0f] text-lg font-bold leading-tight tracking-[-0.015em]">Manutenção de Ar Condicionado</p>
+              <div class="flex items-end gap-3 justify-between">
+                <div class="flex flex-col gap-1">
+                  <p class="text-[#639155] text-base font-normal leading-normal">R$ 150</p>
+                  <p class="text-[#639155] text-base font-normal leading-normal">4.8 (123)</p>
+                </div>
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#54d22d] text-[#121a0f] text-sm font-medium leading-normal"
+                >
+                  <span class="truncate">Contratar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="text-[#121a0f] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Todos os serviços</h3>
+        <div class="p-4">
+          <div class="flex items-stretch justify-between gap-4 rounded-lg">
+            <div class="flex flex-[2_2_0px] flex-col gap-4">
+              <div class="flex flex-col gap-1">
+                <p class="text-[#639155] text-sm font-normal leading-normal">4.5 (87)</p>
+                <p class="text-[#121a0f] text-base font-bold leading-tight">Instalação de Ar Condicionado</p>
+                <p class="text-[#639155] text-sm font-normal leading-normal">R$ 200</p>
+              </div>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#ebf2e9] text-[#121a0f] text-sm font-medium leading-normal w-fit"
+              >
+                <span class="truncate">Contratar</span>
+              </button>
+            </div>
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCM2K9vUOCgs1hDpZf3CLLxfImbNhagh-R9eV_yaADXKf0dF114avc3VCdJ2xpj3FyG-L0ZK-AlBVfpXkb2TnfcRkwDxn__8yHTpOJ7y6X18pdc29azrxZLFCh5c7hi9s4avA2di--AVVeb2SI6wgylRmRN7xQ9PQbC0Fy88xfndi81_EWG31LKtnpQbxAns6VMlbYAr37VMsgpV3ejhEqX9PAwnYevjD7ZDS9R014Ud4LBKSW15ATmmMYpBxb61SAxNOJo1sWzQw");'
+            ></div>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-stretch justify-between gap-4 rounded-lg">
+            <div class="flex flex-[2_2_0px] flex-col gap-4">
+              <div class="flex flex-col gap-1">
+                <p class="text-[#639155] text-sm font-normal leading-normal">4.7 (95)</p>
+                <p class="text-[#121a0f] text-base font-bold leading-tight">Limpeza de Sofá</p>
+                <p class="text-[#639155] text-sm font-normal leading-normal">R$ 120</p>
+              </div>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#ebf2e9] text-[#121a0f] text-sm font-medium leading-normal w-fit"
+              >
+                <span class="truncate">Contratar</span>
+              </button>
+            </div>
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANn3A6A-yOdrK1aTQQfvRr0wsi2eCl5h9ajhPfgRmOJMC344N2O2mpvrxNf957DWg3uA5rsdiCFczmsHKgkPl3haAWM8_APETp99TiMEjDLnbtB5kManDON1oqN21bv3TmwJZ8QXbHwsOJNNSnZmzryYvWFnB4psK59OKGtvYw3F2NBtHm5rC35gnu7viBOV3j19pzXjctB-g3bydz31swhPRzfD7tStEXALTIhXIN44StMSwr9g8BBhiqJ19R0v4lw08WHt_LGA");'
+            ></div>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-stretch justify-between gap-4 rounded-lg">
+            <div class="flex flex-[2_2_0px] flex-col gap-4">
+              <div class="flex flex-col gap-1">
+                <p class="text-[#639155] text-sm font-normal leading-normal">4.6 (110)</p>
+                <p class="text-[#121a0f] text-base font-bold leading-tight">Pintura Residencial</p>
+                <p class="text-[#639155] text-sm font-normal leading-normal">R$ 300</p>
+              </div>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#ebf2e9] text-[#121a0f] text-sm font-medium leading-normal w-fit"
+              >
+                <span class="truncate">Contratar</span>
+              </button>
+            </div>
+            <div
+              class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMVGJ6YcG-cxETJZ0H87Y-WnmCboABgXxLbzdiqlqF8fVYDS3c5v6IAzOw_l7WcgJisp9G6E-l8uONgv_mwqJPEE_FyAG8kEP2bF8rLAWIgpAnI34Vs61Ujw6_b4k_cyP7urHLZG1VIwilYtVZBRNp9K3EMbwWdZRJ7qfQ-axCJh-4P71W9jImAVmOWiDgmqUIs2d45b-8giAs2QrBumiov0c2jSHSE3hzg3_Ya76_6f7aS43Rb7PLymDw80tarGHqUxj5j-F3oA");'
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex gap-2 border-t border-[#ebf2e9] bg-[#f9fbf9] px-4 pb-3 pt-2">
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#639155]" href="#">
+            <div class="text-[#639155] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#639155] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+          </a>
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#121a0f]" href="#">
+            <div class="text-[#121a0f] flex h-8 items-center justify-center" data-icon="MagnifyingGlass" data-size="24px" data-weight="fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M168,112a56,56,0,1,1-56-56A56,56,0,0,1,168,112Zm61.66,117.66a8,8,0,0,1-11.32,0l-50.06-50.07a88,88,0,1,1,11.32-11.31l50.06,50.06A8,8,0,0,1,229.66,229.66ZM112,184a72,72,0,1,0-72-72A72.08,72.08,0,0,0,112,184Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#121a0f] text-xs font-medium leading-normal tracking-[0.015em]">Buscar</p>
+          </a>
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#639155]" href="#">
+            <div class="text-[#639155] flex h-8 items-center justify-center" data-icon="CreditCard" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V88H32V64Zm0,128H32V104H224v88Zm-16-24a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h32A8,8,0,0,1,208,168Zm-64,0a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h16A8,8,0,0,1,144,168Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#639155] text-xs font-medium leading-normal tracking-[0.015em]">Crédito</p>
+          </a>
+          <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#639155]" href="#">
+            <div class="text-[#639155] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-[#639155] text-xs font-medium leading-normal tracking-[0.015em]">Perfil</p>
+          </a>
+        </div>
+        <div class="h-5 bg-[#f9fbf9]"></div>
+      </div>
+    </div>
+  </body>
+</html>
