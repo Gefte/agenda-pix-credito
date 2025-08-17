@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 Agenda e Finanças Colaborativas. Todos os direitos reservados.
+              © 2024 Agenda e Finanças Colaborativas,NoPix. Todos os direitos reservados.
             </p>
             
             <div className="flex gap-6 text-sm">
