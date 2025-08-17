@@ -90,7 +90,7 @@ const AppCarousel = () => {
   ];
 
   return (
-    <section className="py-8 bg-gradient-to-b from-white to-gray-50">
+    <section id="app-carousel" className="py-8 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-3">

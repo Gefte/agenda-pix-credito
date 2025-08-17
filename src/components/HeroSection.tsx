@@ -3,6 +3,12 @@ import { ArrowRight, Play } from "lucide-react";
 import appMockup from "@/assets/app-mockup.png";
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="relative overflow-hidden bg-gradient-background min-h-screen flex items-center">
       <div className="absolute inset-0 bg-gradient-hero opacity-50" />
@@ -31,6 +37,7 @@ const HeroSection = () => {
                 variant="hero" 
                 size="xl"
                 className="group"
+                onClick={() => scrollToSection('lead-form')}
               >
                 Quero fazer parte
                 <ArrowRight className="transition-transform group-hover:translate-x-1" />
@@ -40,6 +47,7 @@ const HeroSection = () => {
                 variant="soft" 
                 size="xl"
                 className="group"
+                onClick={() => scrollToSection('app-carousel')}
               >
                 <Play className="transition-transform group-hover:scale-110" />
                 Ver demonstração
