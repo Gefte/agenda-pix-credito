@@ -1,4 +1,4 @@
-import { Building2, Star, TrendingUp, Heart, User, Search, CreditCard, Smartphone } from "lucide-react";
+import { Building2, Star, TrendingUp, Heart, User, Search, CreditCard, Smartphone, Building, UserCheck } from "lucide-react";
 
 const ComparisonSection = () => {
   const businessFeatures = [
@@ -48,92 +48,112 @@ const ComparisonSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-muted/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        {/* Header Section */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             Soluções para{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              empresas e pessoas
+              empresas
+            </span>
+            {" "}e{" "}
+            <span className="bg-gradient-secondary bg-clip-text text-transparent">
+              pessoas
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Seja para expandir seu negócio ou organizar suas finanças pessoais
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+            Seja para expandir seu negócio ou organizar suas finanças pessoais, 
+            temos a solução ideal para você
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Empresa Section */}
-          <div className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  EMPRESA
-                </span>
-              </h3>
-              <p className="text-muted-foreground">
-                Cresça sua empresa e conquiste crédito
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {businessFeatures.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="flex gap-4 p-6 rounded-lg bg-card border border-border hover:border-primary/20 transition-all duration-300 hover:shadow-card animate-fade-in group"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-6 h-6 text-white" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-foreground">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+          {/* Empresa Card */}
+          <div className="group">
+            <div className="bg-card rounded-3xl p-8 border border-border shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+              {/* Card Header */}
+              <div className="text-center mb-10">
+                <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Building className="w-10 h-10 text-white" />
                 </div>
-              ))}
+                <h3 className="text-3xl font-bold mb-3">
+                  <span className="bg-gradient-primary bg-clip-text text-transparent">
+                    EMPRESA
+                  </span>
+                </h3>
+                <p className="text-muted-foreground text-lg font-medium">
+                  Cresça sua empresa e conquiste crédito
+                </p>
+              </div>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 gap-6">
+                {businessFeatures.map((feature, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-start gap-4 p-5 rounded-2xl bg-muted/30 hover:bg-primary/5 transition-all duration-300 hover:shadow-md group/item"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-foreground text-lg leading-tight">
+                        {feature.title}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Pessoa Section */}
-          <div className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                <span className="bg-gradient-secondary bg-clip-text text-transparent">
-                  PESSOA
-                </span>
-              </h3>
-              <p className="text-muted-foreground">
-                Planeje, compre e construa seu crédito
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {userFeatures.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="flex gap-4 p-6 rounded-lg bg-card border border-border hover:border-secondary/20 transition-all duration-300 hover:shadow-card animate-slide-in group"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-6 h-6 text-white" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-foreground">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
+          {/* Pessoa Card */}
+          <div className="group">
+            <div className="bg-card rounded-3xl p-8 border border-border shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+              {/* Card Header */}
+              <div className="text-center mb-10">
+                <div className="w-20 h-20 bg-gradient-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <UserCheck className="w-10 h-10 text-white" />
                 </div>
-              ))}
+                <h3 className="text-3xl font-bold mb-3">
+                  <span className="bg-gradient-secondary bg-clip-text text-transparent">
+                    PESSOA
+                  </span>
+                </h3>
+                <p className="text-muted-foreground text-lg font-medium">
+                  Planeje, compre e construa seu crédito
+                </p>
+              </div>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 gap-6">
+                {userFeatures.map((feature, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-start gap-4 p-5 rounded-2xl bg-muted/30 hover:bg-secondary/5 transition-all duration-300 hover:shadow-md group/item"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-foreground text-lg leading-tight">
+                        {feature.title}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
