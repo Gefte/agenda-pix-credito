@@ -1,9 +1,7 @@
 import HeroSection from "@/components/HeroSection";
-import BusinessSection from "@/components/BusinessSection";
-import UserSection from "@/components/UserSection";
+import ComparisonSection from "@/components/ComparisonSection";
 import DifferentialsSection from "@/components/DifferentialsSection";
 import LeadRegistrationForm from "@/components/LeadRegistrationForm";
-import InteractiveSection from "@/components/InteractiveSection";
 import AppCarousel from "@/components/AppCarousel";
 import Footer from "@/components/Footer";
 
@@ -11,11 +9,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-background">
       <HeroSection />
-      <BusinessSection />
-      <UserSection />
+      <ComparisonSection />
       <DifferentialsSection />
       <LeadRegistrationForm />
-      <InteractiveSection />
       
       {/* App Carousel Section */}
       <AppCarousel />

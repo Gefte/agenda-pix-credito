@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -29,25 +29,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Links</h4>
-            <nav className="space-y-2">
-              <a href="#empresas" className="block text-muted-foreground hover:text-primary transition-colors">
-                Para Empresas
-              </a>
-              <a href="#usuarios" className="block text-muted-foreground hover:text-primary transition-colors">
-                Para Usuários
-              </a>
-              <a href="#diferenciais" className="block text-muted-foreground hover:text-primary transition-colors">
-                Diferenciais
-              </a>
-              <a href="#contato" className="block text-muted-foreground hover:text-primary transition-colors">
-                Contato
-              </a>
-            </nav>
-          </div>
-
           {/* Social Links */}
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Redes Sociais</h4>
@@ -55,8 +36,7 @@ const Footer = () => {
               {[
                 { icon: Instagram, href: "#", label: "Instagram" },
                 { icon: Facebook, href: "#", label: "Facebook" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Twitter, href: "#", label: "Twitter" }
+                { icon: Linkedin, href: "#", label: "LinkedIn" }
               ].map((social, index) => (
                 <a
                   key={index}
@@ -73,19 +53,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-center">
             <p className="text-sm text-muted-foreground">
-              © 2024 Agenda e Finanças Colaborativas,NoPix. Todos os direitos reservados.
+              © 2024 Agenda e Finanças Colaborativas, NoPix. Todos os direitos reservados.
             </p>
-            
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                Política de Privacidade
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                Termos de Uso
-              </a>
-            </div>
           </div>
         </div>
       </div>
