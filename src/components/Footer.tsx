@@ -3,10 +3,10 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* Logo and Description */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="md:col-span-2 space-y-6">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">A</span>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h4 className="font-semibold text-foreground">Redes Sociais</h4>
             <div className="flex gap-3">
               {[
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border pt-8 mt-8">
+        <div className="border-t border-border pt-10 mt-12">
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
               © 2024 Agenda e Finanças Colaborativas, NoPix. Todos os direitos reservados.
