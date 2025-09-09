@@ -1,0 +1,12 @@
+[Unit]
+Description=ViMi42 App
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/caminho/do/projeto
+ExecStart=/usr/bin/python3 frontend_server.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,40 @@
+modules = ["bash", "web", "nodejs-20", "python-3.11"]
+
+[nix]
+channel = "stable-25_05"
+packages = ["libxcrypt"]
+
+[agent]
+expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "ViMi42 App"
+
+[[workflows.workflow]]
+name = "ViMi42 App"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python frontend_server.py"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["python", "frontend_server.py"]
