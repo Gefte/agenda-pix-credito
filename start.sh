@@ -1,71 +1,93 @@
 #!/bin/bash
 
-echo "🚀 NoPIX - Inicializador"
-echo "========================"
-echo ""
+# Script para inicializar e rodar a aplicação com Docker Compose
+# Autor: Sistema de Agenda PIX Crédito
+# Data: $(date)
 
-# Verificar se o Docker está instalado
+set -e  # Parar execução se algum comando falhar
+
+echo "🚀 Iniciando aplicação Agenda PIX Crédito..."
+
+# Verificar se Docker está instalado
 if ! command -v docker &> /dev/null; then
     echo "❌ Docker não está instalado. Por favor, instale o Docker primeiro."
     exit 1
 fi
 
-# Verificar se o Docker Compose está instalado
+# Verificar se Docker Compose está instalado
 if ! command -v docker-compose &> /dev/null; then
     echo "❌ Docker Compose não está instalado. Por favor, instale o Docker Compose primeiro."
     exit 1
 fi
 
-echo "✅ Docker e Docker Compose encontrados!"
+# Verificar se Docker está rodando
+if ! docker info &> /dev/null; then
+    echo "❌ Docker não está rodando. Por favor, inicie o Docker primeiro."
+    exit 1
+fi
+
+echo "✅ Docker verificado com sucesso!"
+
+# Função para fazer cleanup em caso de interrupção
+cleanup() {
+    echo "🛑 Parando aplicação..."
+    docker-compose down
+    exit 0
+}
+
+# Capturar sinais de interrupção
+trap cleanup SIGINT SIGTERM
+
+# Parar containers existentes (se houver)
+echo "🧹 Limpando containers existentes..."
+docker-compose down --remove-orphans
+
+# Construir e iniciar os serviços
+echo "🔨 Construindo imagens Docker..."
+docker-compose build --no-cache
+
+echo "🚀 Iniciando serviços..."
+docker-compose up -d
+
+echo "⏳ Aguardando serviços ficarem prontos..."
+sleep 10
+
+# Verificar se os serviços estão rodando
+echo "🔍 Verificando status dos serviços..."
+
+backend_status=$(docker-compose ps -q backend | xargs docker inspect --format='{{.State.Health.Status}}' 2>/dev/null || echo "starting")
+frontend_status=$(docker-compose ps -q frontend | xargs docker inspect --format='{{.State.Health.Status}}' 2>/dev/null || echo "starting")
+
+echo "Backend status: $backend_status"
+echo "Frontend status: $frontend_status"
+
+# Mostrar logs se algo não estiver funcionando
+if [[ "$backend_status" != "healthy" ]]; then
+    echo "⚠️  Backend pode não estar saudável. Logs do backend:"
+    docker-compose logs backend --tail=20
+fi
+
+if [[ "$frontend_status" != "healthy" ]]; then
+    echo "⚠️  Frontend pode não estar saudável. Logs do frontend:"
+    docker-compose logs frontend --tail=20
+fi
+
 echo ""
-
-# Menu de opções
-echo "Escolha uma opção:"
-echo "1) 🚀 Executar em modo desenvolvimento (com hot reload)"
-echo "2) 🏭 Executar em modo produção"
-echo "3) 🛑 Parar todos os serviços"
-echo "4) 🔄 Rebuild das imagens"
-echo "5) 📊 Ver logs"
-echo "6) 🧹 Limpar tudo (parar e remover containers)"
-echo "7) ❌ Sair"
+echo "🎉 Aplicação iniciada com sucesso!"
 echo ""
+echo "📋 Informações dos serviços:"
+echo "  🔧 Backend (API):     http://localhost:8000"
+echo "  📊 Docs da API:       http://localhost:8000/docs"
+echo "  🌐 Frontend:          http://localhost:3000"
+echo ""
+echo "📝 Comandos úteis:"
+echo "  Ver logs:             docker-compose logs -f"
+echo "  Parar aplicação:      docker-compose down"
+echo "  Reiniciar:            docker-compose restart"
+echo "  Status:               docker-compose ps"
+echo ""
+echo "💡 Pressione Ctrl+C para parar a aplicação"
 
-read -p "Digite sua opção (1-7): " choice
-
-case $choice in
-    1)
-        echo "🚀 Iniciando modo desenvolvimento..."
-        docker-compose -f docker-compose.simple.yml up agenda-dev
-        ;;
-    2)
-        echo "🏭 Iniciando modo produção..."
-        docker-compose up agenda-app
-        ;;
-    3)
-        echo "🛑 Parando todos os serviços..."
-        docker-compose down
-        ;;
-    4)
-        echo "🔄 Rebuild das imagens..."
-        docker-compose build --no-cache
-        echo "✅ Rebuild concluído!"
-        ;;
-    5)
-        echo "📊 Mostrando logs..."
-        docker-compose logs -f
-        ;;
-    6)
-        echo "🧹 Limpando tudo..."
-        docker-compose down -v --remove-orphans
-        docker system prune -f
-        echo "✅ Limpeza concluída!"
-        ;;
-    7)
-        echo "👋 Até logo!"
-        exit 0
-        ;;
-    *)
-        echo "❌ Opção inválida!"
-        exit 1
-        ;;
-esac
+# Seguir logs em tempo real
+echo "📋 Seguindo logs da aplicação..."
+docker-compose logs -f

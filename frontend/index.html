@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViMi42 - Agenda e Finanças Colaborativas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ViMi42</h1>
+            <p>Agenda e Finanças Colaborativas</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Uma nova forma de gerenciar serviços e crédito</h2>
+            <p>Para usuários e empresas. Construa seu histórico e tenha acesso a crédito inteligente.</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="container">
+            <h2>Cadastre-se para o beta</h2>
+            <form id="leadForm">
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                <input type="tel" id="telefone" placeholder="Telefone" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="tipo" value="pessoal" checked>
+                        Uso pessoal
+                    </label>
+                    <label>
+                        <input type="radio" name="tipo" value="empresa">
+                        Empresa
+                    </label>
+                </div>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="aceitou_lgpd" required>
+                    Aceito as regras de tratamento de dados conforme a LGPD
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ViMi42. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
