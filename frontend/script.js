@@ -201,11 +201,10 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
     setButtonLoading(true);
 
     const formData = {
-        nome: document.getElementById('nome').value,
-        telefone: document.getElementById('telefone').value,
+        name: document.getElementById('nome').value,
         email: document.getElementById('email').value,
-        tipo: document.querySelector('input[name="tipo"]:checked').value,
-        aceitou_lgpd: document.getElementById('aceitou_lgpd').checked
+        business_type: document.querySelector('input[name="tipo"]:checked').value,
+        terms_accepted: document.getElementById('aceitou_lgpd').checked
     };
 
     try {
@@ -281,10 +280,62 @@ function showErrorMessage(message) {
     }, 5000);
 }
 
+// ===== FUNÇÕES DOS MODAIS LEGAIS =====
+
+// Abrir modal de termos de uso
+function openTermsModal() {
+    document.getElementById('termsModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// Fechar modal de termos de uso
+function closeTermsModal() {
+    document.getElementById('termsModal').classList.remove('show');
+    document.body.style.overflow = 'auto';
+}
+
+// Abrir modal de privacidade
+function openPrivacyModal() {
+    document.getElementById('privacyModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// Fechar modal de privacidade
+function closePrivacyModal() {
+    document.getElementById('privacyModal').classList.remove('show');
+    document.body.style.overflow = 'auto';
+}
+
+// Suavizar scroll para âncoras nos modais
+function setupModalAnchors() {
+    document.querySelectorAll('.legal-toc a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const modalBody = targetElement.closest('.modal-body');
+                modalBody.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+                
+                // Destacar a seção momentaneamente
+                targetElement.style.backgroundColor = 'var(--amarelo-soft)';
+                setTimeout(() => {
+                    targetElement.style.backgroundColor = '';
+                }, 2000);
+            }
+        });
+    });
+}
+
 // Inicializar todas as funcionalidades
 document.addEventListener('DOMContentLoaded', function() {
     setupButtonAnimation();
     setupRealTimeValidation();
+    setupModalAnchors();
     
     // Fechar modal clicando fora
     document.getElementById('successModal').addEventListener('click', function(e) {
@@ -293,10 +344,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Fechar modais legais clicando fora
+    document.querySelectorAll('.legal-modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                if (this.id === 'termsModal') {
+                    closeTermsModal();
+                } else if (this.id === 'privacyModal') {
+                    closePrivacyModal();
+                }
+            }
+        });
+    });
+    
     // Fechar modal com ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeModal();
+            closeTermsModal();
+            closePrivacyModal();
         }
     });
 });

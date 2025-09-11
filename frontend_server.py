@@ -66,9 +66,9 @@ def start_backend():
     """Start the FastAPI backend server"""
     os.chdir('backend')
     proc = subprocess.Popen([
-        'python', '-m', 'uvicorn', 'main:app', 
-        '--host', 'localhost', 
-        '--port', '8000', 
+        'python3', '-m', 'uvicorn', 'main:app',
+        '--host', 'localhost',
+        '--port', '8000',
         '--reload'
     ])
     os.chdir('..')

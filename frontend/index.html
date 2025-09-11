@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViMi42 - Rede Social de Serviços e Finanças Colaborativas</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon/favicon-64.png">
+    <link rel="shortcut icon" href="favicon/favicon-64.png">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -65,8 +70,8 @@
                         <div class="hero-description">
                             <p class="main-message">
                                 Uma <strong>rede social de serviços e finanças colaborativas</strong>: 
-                                cada contratação fortalece empresas e prestadores, e cada uso 
-                                aumenta o crédito e a confiança do usuário.
+                                cada contratacao fortalece empresas e prestadores, e cada uso 
+                                aumenta o crédito e a confianca do usuário.
                             </p>
                             <p class="sub-message">
                                 <i class="fas fa-bolt"></i>
@@ -209,7 +214,7 @@
                                             <div class="radio-content">
                                                 <i class="fas fa-user-circle"></i>
                                                 <div>
-                                                    <span class="radio-title">Uso Pessoal</span>
+                                                    <span class="radio-title">Usuario</span>
                                                     <span class="radio-subtitle">Contratar serviços</span>
                                                 </div>
                                             </div>
@@ -236,8 +241,8 @@
                                         <i class="fas fa-check"></i>
                                     </span>
                                     <span class="checkbox-text">
-                                        Li e aceito as <a href="#" class="link">regras de tratamento de dados</a> 
-                                        conforme a LGPD e os <a href="#" class="link">termos de uso</a>
+                                        Li e aceito as <a href="#" class="link" onclick="openPrivacyModal(); return false;">regras de tratamento de dados</a> 
+                                        conforme a LGPD e os <a href="#" class="link" onclick="openTermsModal(); return false;">termos de uso</a>
                                     </span>
                                 </label>
                             </div>
@@ -319,8 +324,8 @@
                     </div>
                     <div class="footer-right">
                         <div class="footer-links">
-                            <a href="#" class="footer-link">Privacidade</a>
-                            <a href="#" class="footer-link">Termos</a>
+                            <a href="#" class="footer-link" onclick="openPrivacyModal(); return false;">Privacidade</a>
+                            <a href="#" class="footer-link" onclick="openTermsModal(); return false;">Termos</a>
                             <a href="#" class="footer-link">Suporte</a>
                             <a href="#" class="footer-link">Contato</a>
                         </div>
@@ -339,6 +344,323 @@
             <h3>Bem-vindo à Rede!</h3>
             <p>Cadastro realizado com sucesso! Em breve você receberá informações sobre o acesso antecipado.</p>
             <button class="modal-btn" onclick="closeModal()">Começar a Explorar</button>
+        </div>
+    </div>
+
+    <!-- Terms Modal Melhorado -->
+    <div id="termsModal" class="modal legal-modal">
+        <div class="legal-modal-content">
+            <div class="modal-header">
+                <h2>Termos de Uso - ViMi42</h2>
+                <button class="modal-close" onclick="closeTermsModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="legal-content">
+                    <p><strong>Última atualização:</strong> 10 de Setembro de 2025</p>
+                    
+                    <div class="legal-toc">
+                        <h3>Índice</h3>
+                        <ul>
+                            <li><a href="#section1">1. Aceitação dos Termos</a></li>
+                            <li><a href="#section2">2. Definições</a></li>
+                            <li><a href="#section3">3. Cadastro e Conta</a></li>
+                            <li><a href="#section4">4. Serviços da Plataforma</a></li>
+                            <li><a href="#section5">5. Sistema de Crédito</a></li>
+                            <li><a href="#section6">6. Transações Financeiras</a></li>
+                            <li><a href="#section7">7. Propriedade Intelectual</a></li>
+                            <li><a href="#section8">8. Responsabilidades</a></li>
+                            <li><a href="#section9">9. Modificações</a></li>
+                            <li><a href="#section10">10. Rescisão</a></li>
+                            <li><a href="#section11">11. Disposições Gerais</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 id="section1">1. Aceitação dos Termos</h3>
+                    <p>Ao acessar e usar a plataforma ViMi42, você concorda em cumprir e estar vinculado a estes Termos de Uso e a nossa Política de Privacidade. Se você não concordar com qualquer parte destes termos, não poderá acessar nosso serviço.</p>
+
+                    <h3 id="section2">2. Definições</h3>
+                    <p>Para efeitos destes Termos, consideram-se:</p>
+                    <ul>
+                        <li><strong>Plataforma:</strong> Ambiente digital ViMi42, incluindo site, aplicativo e serviços correlatos;</li>
+                        <li><strong>Usuário:</strong> Pessoa física ou jurídica que utiliza a plataforma;</li>
+                        <li><strong>Prestador:</strong> Usuário que oferece serviços através da plataforma;</li>
+                        <li><strong>Contratante:</strong> Usuário que contrata serviços através da plataforma;</li>
+                        <li><strong>Sistema de Crédito:</strong> Mecanismo de avaliação de confiança baseado no histórico de uso.</li>
+                    </ul>
+
+                    <h3 id="section3">3. Cadastro e Conta de Usuário</h3>
+                    <h4>3.1. Elegibilidade</h4>
+                    <p>Para usar a plataforma, você deve:</p>
+                    <ul>
+                        <li>Ter pelo menos 18 anos ou idade legal em sua jurisdição;</li>
+                        <li>Fornecer informações verdadeiras, precisas e completas;</li>
+                        <li>Manter suas informações atualizadas.</li>
+                    </ul>
+
+                    <h4>3.2. Responsabilidade da Conta</h4>
+                    <p>Você é responsável por:</p>
+                    <ul>
+                        <li>Manter a confidencialidade de suas credenciais de acesso;</li>
+                        <li>Todas as atividades que ocorram em sua conta;</li>
+                        <li>Notificar a ViMi42 imediatamente sobre qualquer uso não autorizado.</li>
+                    </ul>
+
+                    <h3 id="section4">4. Serviços da Plataforma</h3>
+                    <h4>4.1. Funcionalidades</h4>
+                    <p>A ViMi42 oferece um ambiente para:</p>
+                    <ul>
+                        <li>Conexão entre prestadores de serviços e contratantes;</li>
+                        <li>Gerenciamento de transações financeiras através do PIX;</li>
+                        <li>Avaliação e feedback sobre serviços prestados;</li>
+                        <li>Construção de histórico e sistema de crédito colaborativo.</li>
+                    </ul>
+
+                    <h4>4.2. Condutas Permitidas</h4>
+                    <ul>
+                        <li>Interagir com respeito e profissionalismo;</li>
+                        <li>Fornecer informações verdadeiras e precisas;</li>
+                        <li>Honrar compromissos e acordos estabelecidos;</li>
+                        <li>Fornecer avaliações honestas e construtivas.</li>
+                    </ul>
+
+                    <h4>4.3. Condutas Proibidas</h4>
+                    <ul>
+                        <li>Criar contas falsas ou usar informações incorretas;</li>
+                        <li>Realizar atividades fraudulentas ou ilegais;</li>
+                        <li>Assediar, ameaçar ou discriminar outros usuários;</li>
+                        <li>Publicar conteúdo ofensivo, obsceno ou difamatório;</li>
+                        <li>Violar direitos de propriedade intelectual;</li>
+                        <li>Contornar o sistema de pagamento da plataforma.</li>
+                    </ul>
+
+                    <h3 id="section5">5. Sistema de Crédito</h3>
+                    <p>O sistema de crédito é baseado no histórico de uso, confiança e engajamento na plataforma. Seu limite de crédito pode aumentar ou diminuir com base em:</p>
+                    <ul>
+                        <li>Frequência e qualidade das interações;</li>
+                        <li>Avaliações recebidas de outros usuários;</li>
+                        <li>Histórico de pagamentos;</li>
+                        <li>Tempo de uso da plataforma.</li>
+                    </ul>
+
+                    <h3 id="section6">6. Transações Financeiras</h3>
+                    <h4>6.1. Pagamentos</h4>
+                    <p>Todas as transações financeiras na plataforma são processadas via PIX. A ViMi42 atua como intermediária para garantir a segurança das transações.</p>
+
+                    <h4>6.2. Taxas</h4>
+                    <p>A utilização da plataforma está sujeita às seguintes taxas:</p>
+                    <ul>
+                        <li>Taxa de intermediação: 5% sobre o valor da transação;</li>
+                        <li>Taxa de processamento de pagamento: 1,99% por transação.</li>
+                    </ul>
+                    <p>Estas taxas podem ser alteradas mediante aviso prévio de 30 dias.</p>
+
+                    <h3 id="section7">7. Propriedade Intelectual</h3>
+                    <p>Todos os direitos de propriedade intelectual relacionados à plataforma ViMi42, incluindo software, marcas, logos e conteúdo, são de propriedade exclusiva da ViMi42 ou de seus licenciadores.</p>
+
+                    <h3 id="section8">8. Responsabilidades</h3>
+                    <h4>8.1. Limitação de Responsabilidade</h4>
+                    <p>A ViMi42 não se responsabiliza por:</p>
+                    <ul>
+                        <li>Qualidade dos serviços prestados por terceiros na plataforma;</li>
+                        <li>Disputas entre usuários;</li>
+                        <li>Danos resultantes de uso inadequado da plataforma;</li>
+                        <li>Interrupções temporárias do serviço por motivos técnicos.</li>
+                    </ul>
+
+                    <h4>8.2. Responsabilidade do Usuário</h4>
+                    <p>O usuário é integralmente responsável por:</p>
+                    <ul>
+                        <li>Verificar as credenciais e qualificações de prestadores de serviços;</li>
+                        <li>Estabelecer termos claros para a prestação de serviços;</li>
+                        <li>Cumprir com obrigações fiscais e legais relacionadas aos serviços prestados ou recebidos.</li>
+                    </ul>
+
+                    <h3 id="section9">9. Modificações nos Termos</h3>
+                    <p>A ViMi42 reserva-se o direito de modificar estes Termos a qualquer momento. Alterações significativas serão notificadas com 30 dias de antecedência. O uso continuado da plataforma após as modificações constitui aceitação dos novos termos.</p>
+
+                    <h3 id="section10">10. Rescisão</h3>
+                    <p>Estes Termos permanecem em vigor enquanto você utilizar nossa plataforma. Podemos suspender ou encerrar sua conta a qualquer momento, sem aviso prévio, por conduta que viole estes Termos.</p>
+
+                    <h3 id="section11">11. Disposições Gerais</h3>
+                    <h4>11.1. Lei Aplicável</h4>
+                    <p>Estes Termos são regidos pelas leis da República Federativa do Brasil.</p>
+
+                    <h4>11.2. Forum</h4>
+                    <p>Para questões decorrentes destes termos, fica eleito o foro da comarca de São Paulo/SP, com exclusão de qualquer outro, por mais privilegiado que seja.</p>
+
+                    <h4>11.3. Contato</h4>
+                    <p>Para questões relacionadas a estes Termos, entre em contato conosco:</p>
+                    <p><strong>Email:</strong> ola@vimi42.com.br<br>
+                    <strong>Endereço:</strong> Av. Paulista, 1000, São Paulo/SP</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeTermsModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal Melhorado -->
+    <div id="privacyModal" class="modal legal-modal">
+        <div class="legal-modal-content">
+            <div class="modal-header">
+                <h2>Política de Privacidade - ViMi42</h2>
+                <button class="modal-close" onclick="closePrivacyModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="legal-content">
+                    <p><strong>Última atualização:</strong> 10 de Setembro de 2025</p>
+                    
+                    <div class="lgpd-highlight">
+                        <p><strong>Compromisso com a LGPD:</strong> A ViMi42 está comprometida com a proteção de seus dados pessoais e cumpre integralmente a Lei Geral de Proteção de Dados (Lei 13.709/2018).</p>
+                    </div>
+
+                    <div class="legal-toc">
+                        <h3>Índice</h3>
+                        <ul>
+                            <li><a href="#privacy-section1">1. Controlador de Dados</a></li>
+                            <li><a href="#privacy-section2">2. Dados Coletados</a></li>
+                            <li><a href="#privacy-section3">3. Bases Legais e Finalidades</a></li>
+                            <li><a href="#privacy-section4">4. Compartilhamento de Dados</a></li>
+                            <li><a href="#privacy-section5">5. Retenção de Dados</a></li>
+                            <li><a href="#privacy-section6">6. Seus Direitos LGPD</a></li>
+                            <li><a href="#privacy-section7">7. Segurança de Dados</a></li>
+                            <li><a href="#privacy-section8">8. Cookies e Tecnologias Similares</a></li>
+                            <li><a href="#privacy-section9">9. Menores de Idade</a></li>
+                            <li><a href="#privacy-section10">10. Alterações nesta Política</a></li>
+                            <li><a href="#privacy-section11">11. Contato do Encarregado (DPO)</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 id="privacy-section1">1. Controlador de Dados</h3>
+                    <p><strong>ViMi42 Tecnologia Ltda.</strong><br>
+                    CNPJ: 12.345.678/0001-90<br>
+                    Endereço: Av. Paulista, 1000, São Paulo/SP, CEP: 01310-100<br>
+                    Email: ola@vimi42.com.br</p>
+
+                    <h3 id="privacy-section2">2. Dados Coletados</h3>
+                    <h4>2.1. Dados fornecidos diretamente</h4>
+                    <ul>
+                        <li><strong>Dados de identificação:</strong> Nome completo, CPF, data de nascimento, RG;</li>
+                        <li><strong>Dados de contato:</strong> Email, telefone, endereço;</li>
+                        <li><strong>Dados profissionais:</strong> Histórico profissional, habilidades, certificações;</li>
+                        <li><strong>Dados financeiros:</strong> Dados bancários, histórico de transações;</li>
+                        <li><strong>Dados de acesso:</strong> Login, senha, perguntas de segurança.</li>
+                    </ul>
+
+                    <h4>2.2. Dados coletados automaticamente</h4>
+                    <ul>
+                        <li><strong>Dados de uso:</strong> Histórico de navegação, interações, serviços contratados;</li>
+                        <li><strong>Dados técnicos:</strong> Endereço IP, tipo de dispositivo, navegador, localização;</li>
+                        <li><strong>Cookies e tecnologias similares:</strong> Para melhorar a experiência e segurança.</li>
+                    </ul>
+
+                    <h4>2.3. Dados de terceiros</h4>
+                    <p>Podemos receber dados de parceiros comerciais, redes sociais (quando você conecta suas contas) e serviços de verificação de identidade.</p>
+
+                    <h3 id="privacy-section3">3. Bases Legais e Finalidades</h3>
+                    <p>Tratamos seus dados com base nas seguintes bases legais:</p>
+                    
+                    <h4>3.1. Consentimento</h4>
+                    <p>Para finalidades como:</p>
+                    <ul>
+                        <li>Envio de comunicações de marketing;</li>
+                        <li>Uso de dados sensíveis;</li>
+                        <li>Compartilhamento com terceiros para fins não essenciais.</li>
+                    </ul>
+
+                    <h4>3.2. Execução de contrato</h4>
+                    <p>Para finalidades como:</p>
+                    <ul>
+                        <li>Prestação dos serviços contratados;</li>
+                        <li>Processamento de pagamentos;</li>
+                        <li>Comunicação sobre a conta e serviços.</li>
+                    </ul>
+
+                    <h4>3.3. Legítimo interesse</h4>
+                    <p>Para finalidades como:</p>
+                    <ul>
+                        <li>Melhoria de nossos serviços e experiência do usuário;</li>
+                        <li>Prevenção de fraudes e segurança;</li>
+                        <li>Análise de dados para business intelligence.</li>
+                    </ul>
+
+                    <h4>3.4. Cumprimento de obrigação legal</h4>
+                    <p>Para finalidades como:</p>
+                    <ul>
+                        <li>Atendimento a requisições judiciais ou administrativas;</li>
+                        <li>Cumprimento de obrigações fiscais e contábeis.</li>
+                    </ul>
+
+                    <h3 id="privacy-section4">4. Compartilhamento de Dados</h3>
+                    <p>Seus dados podem ser compartilhados com:</p>
+                    <ul>
+                        <li><strong>Prestadores de serviços:</strong> Processamento de pagamentos, hospedagem, analytics;</li>
+                        <li><strong>Parceiros comerciais:</strong> Para oferta de serviços complementares;</li>
+                        <li><strong>Autoridades competentes:</strong> Quando exigido por lei ou processo legal;</li>
+                        <li><strong>Outros usuários:</strong> Informações limitadas necessárias para transações.</li>
+                    </ul>
+
+                    <h3 id="privacy-section5">5. Retenção de Dados</h3>
+                    <p>Mantemos seus dados pelo período necessário para:</p>
+                    <ul>
+                        <li>Cumprir finalidades para as quais foram coletados;</li>
+                        <li>Atender obrigações legais ou regulatórias;</li>
+                        <li>Resolver disputas, fazer cumprir nossos acordos.</li>
+                    </ul>
+                    <p>Após esse período, os dados serão anonimizados ou excluídos de forma segura.</p>
+
+                    <h3 id="privacy-section6">6. Seus Direitos LGPD</h3>
+                    <p>Conforme o art. 18 da LGPD, você tem direito a:</p>
+                    <ul>
+                        <li><strong>Confirmação e acesso:</strong> Confirmar que seus dados são tratados e acessá-los;</li>
+                        <li><strong>Correção:</strong> Solicitar correção de dados incompletos, inexatos ou desatualizados;</li>
+                        <li><strong>Anonimização, bloqueio ou eliminação:</strong> Solicitar a eliminação ou limitação do tratamento;</li>
+                        <li><strong>Portabilidade:</strong> Solicitar a transferência de dados a outro fornecedor de serviço;</li>
+                        <li><strong>Informação sobre compartilhamento:</strong> Saber com quais entidades compartilhamos seus dados;</li>
+                        <li><strong>Revogação do consentimento:</strong> Revogar consentimento a qualquer momento.</li>
+                    </ul>
+
+                    <h3 id="privacy-section7">7. Segurança de Dados</h3>
+                    <p>Implementamos medidas técnicas e organizacionais robustas para proteger seus dados:</p>
+                    <ul>
+                        <li>Criptografia de dados em repouso e em trânsito;</li>
+                        <li>Controle de acesso baseado em função (RBAC);</li>
+                        <li>Monitoramento de segurança 24/7;</li>
+                        <li>Backups regulares e testados;</li>
+                        <li>Programa de gestão de vulnerabilidades.</li>
+                    </ul>
+
+                    <h3 id="privacy-section8">8. Cookies e Tecnologias Similares</h3>
+                    <p>Utilizamos cookies para:</p>
+                    <ul>
+                        <li>Funcionamento essencial da plataforma;</li>
+                        <li>Análise de uso e desempenho;</li>
+                        <li>Personalização de conteúdo e anúncios.</li>
+                    </ul>
+                    <p>Você pode gerenciar suas preferências de cookies através das configurações do seu navegador.</p>
+
+                    <h3 id="privacy-section9">9. Menores de Idade</h3>
+                    <p>Nossos serviços não são direcionados a menores de 18 anos. Se tomarmos conhecimento de que coletamos dados de menores sem consentimento parental, tomaremos medidas para remover essas informações.</p>
+
+                    <h3 id="privacy-section10">10. Alterações nesta Política</h3>
+                    <p>Podemos atualizar esta política periodicamente. Notificaremos sobre mudanças significativas por email ou através de aviso em nossa plataforma.</p>
+
+                    <h3 id="privacy-section11">11. Contato do Encarregado (DPO)</h3>
+                    <p>Para exercer seus direitos ou esclarecer dúvidas sobre proteção de dados, entre em contato com nosso Encarregado de Proteção de Dados:</p>
+                    <p><strong>Email:</strong> dpo@vimi42.com.br<br>
+                    <strong>Telefone:</strong> (11) 3456-7890<br>
+                    <strong>Horário de atendimento:</strong> Segunda a sexta, 9h às 18h</p>
+
+                    <h3>12. Autoridade Nacional de Proteção de Dados (ANPD)</h3>
+                    <p>Caso remain com dúvidas ou queira apresentar uma reclamação, você pode contatar a ANPD:</p>
+                    <p><strong>Site:</strong> www.gov.br/anpd<br>
+                    <strong>Endereço:</strong> Esplanada dos Ministérios, Bloco C, 2º andar, Brasília/DF, CEP: 70070-900</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closePrivacyModal()">Fechar</button>
+            </div>
         </div>
     </div>
 
